@@ -29,6 +29,9 @@ for parent in parent_elements:
 print 'Extracted {} songs from {}.'.format(len(songs), url)
 print
 
+if not len(songs):
+	exit('No songs extracted - exiting.')
+
 # Login to Google Play Music and create new playlist from fetched songs
 api = Mobileclient()
 logged_in = api.login(google_user, google_password, Mobileclient.FROM_MAC_ADDRESS)
